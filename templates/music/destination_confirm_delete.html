@@ -1,0 +1,15 @@
+{% block content %}
+    <div class="content-section" style="background:rgb(179, 206, 80) ; border: 5px outset red;">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete Post</legend>
+                <h1>Are you sure you want to delete the post?</h1>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit" style="margin: 30px 250px;text-align: center;font-size: 30px;">Yes, Delete!</button><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+

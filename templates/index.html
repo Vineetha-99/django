@@ -1,0 +1,427 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>MUSIC</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="MUSIC template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{%static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'styles/responsive.css' %}">
+</head>
+<body>
+
+	
+<div class="super_container">
+	
+	<!-- Header -->
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+							<div class="logo"><a style="color: #FFFFFF">MUSIC IS LIFE</a></div>
+							<nav class="main_nav">
+								<ul class="d-flex flex-row align-items-start justify-content-start">
+									<li class="active"><a href="accounts/index">Home</a></li>
+									{% if user.is_authenticated %}
+                                    <li style="font-size:16px ; font-family:'Oswald', sans-serif ;font-weight: 400;color: #FFFFFF; white-space: nowrap"><b><u>Hey  {{user.first_name}}! </u></b></li>
+                                    <li><a href="accounts/logout">Logout</a></li>
+                                    {% else %}
+                                    <li><a href="accounts/register">Register</a></li>
+                                    <li><a href="accounts/login">Login</a></li>
+                                    {% endif %}
+									<li><a href="accounts/contact">Contact</a></li>
+								</ul>
+							</nav>
+							
+							
+
+
+							<!-- Hamburger -->
+
+							<div class="hamburger ml-auto">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu">
+		<div class="menu_header d-flex flex-row align-items-center justify-content-start">
+			<div class="menu_logo"><a style="color: #FFFFFF">MUSIC IS LIFE</a></div>
+			<div class="menu_close_container ml-auto"><div class="menu_close"><div></div><div></div></div></div>
+		</div>
+		<div class="menu_content">
+			<ul>
+				<li class="active"><a href="accounts/index">Home</a></li>
+				{% if user.is_authenticated %}
+                <li style="font-size:16px ; font-family:'Oswald', sans-serif ;font-weight: 400;color: #FFFFFF; white-space: nowrap"><b><u>Hey  {{user.first_name}}! </u></b></li>
+                <li><a href="accounts/logout">Logout</a></li>
+                {% else %}
+                <li><a href="accounts/register">Register</a></li>
+                <li><a href="accounts/login">Login</a></li>
+                {% endif %}
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		
+		<div class="home_slider_container">
+			<div class="owl-carousel owl-theme home_slider">
+				
+				<div class="owl-item">
+					<div class="background_image" style="background-image:url({% static 'images/home.jpg' %})"></div>
+					<div class="home_slider_content_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_slider_content">
+										<div class="home_title" align="left"><h2>WINGS of MELODY</h2></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="home_page_nav">
+				<ul class="d-flex flex-column align-items-end justify-content-end">
+					<li><a href="#" data-scroll-to="#destinations">FAVOURITES<span>01</span></a></li>
+					<li><a href="#" data-scroll-to="#testimonials">ABOUT<span>02</span></a></li>
+					<li><a href="#" data-scroll-to="#news">TOP CHARTS<span>03</span></a></li>
+					<br>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Search -->
+	<br>
+	<br>
+	<div class="home_search">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_search_container">
+						<div class="home_search_title">Search for your Music</div>
+						<div class="home_search_content">
+							<form action="#" class="home_search_form" id="home_search_form">
+								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+									<input type="text" class="search_input search_input_1" placeholder="Song" required="required">
+									<input type="text" class="search_input search_input_2" placeholder="Singer" required="required">
+									<input type="text" class="search_input search_input_3" placeholder="Album" required="required">
+									<button class="home_search_button">search</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Intro -->
+
+	<div class="intro">
+		<div class="intro_background" style="background-image:url({% static 'images/m1.jpeg' %})"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="intro_container">
+						<div class="row">
+
+							<!-- Intro Item -->
+							<div class="col-lg-4 intro_col">
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="{% static 'images/s3.png' %}" alt=""></div>
+									<div class="intro_content">
+										<div class="intro_title">Top Melodies</div>
+										<div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Intro Item -->
+							<div class="col-lg-4 intro_col">
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="{% static 'images/s2.png' %}" alt=""></div>
+									<div class="intro_content">
+										<div class="intro_title">Amazing Singers</div>
+										<div class="intro_subtitle"><p>Sollicitudin mauris lobortis in.</p></div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Intro Item -->
+							<div class="col-lg-4 intro_col">
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="{% static 'images/s1.png' %}" alt=""></div>
+									<div class="intro_content">
+										<div class="intro_title">Best Lyrics</div>
+										<div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
+									</div>
+								</div>
+							</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+
+	<!-- Destinations -->
+	<div class="destinations" id="destinations" >
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">Why walk when you can Dance</div>
+					<div class="section_title"><h2>Popular Albums</h2></div>
+				</div>
+			</div>
+			<div class="row destinations_row">
+				<div class="col">
+					<div class="destinations_container item_grid">
+
+						{% for dest in dests %}
+							<!-- Destination -->
+							<div class="destination item">
+								<div class="destination_image">
+									<img src="{{dest.img.url}}" alt="">
+
+									{% if dest.offer %}
+									<div class="spec_offer text-center"><a style="color: #FFFFFF"><b>Special Offer</b></a></div>
+									{% endif %}
+
+								</div>
+								<div class="destination_content">
+									<div class="destination_title"><a style="color: #000000">{{dest.name}}</a><br>
+										
+									</div>
+									<div class="destination_subtitle">
+										<p>Album : {{dest.desc}}</p>
+									</div>
+									<div class="destination_price">From ${{dest.price}}</div><br>
+									{% if user.is_authenticated %}
+									<a href="{% url 'update-form' pk=dest.pk %}" style="font-size:15px ; font-family:'Oswald', sans-serif ;font-weight: 400;color: hsl(133, 80%, 38%)  ">Update</a><br>
+									<a href="{% url 'delete-form' pk=dest.pk %}" style="font-size:15px ; font-family:'Oswald', sans-serif ;font-weight: 400;color: hsl(0, 80%, 38%)  ">Delete</a><br>
+									{% endif %}	
+
+								</div>
+							</div>
+
+							{% endfor %}
+						
+
+					</div>
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+				{% if user.is_authenticated %}
+				<center>
+				<h3 style= "color: #0fe621">Create your own Album!!!</h3>
+				<a href="{% url 'create-form' %}" style="font-size:30px ; font-family:'Oswald', sans-serif ;font-weight: 400;color: hsl(0, 80%, 38%)  ">Create</a><br>
+				</center>
+				{% else %}
+				<h4 style= "color: #0fe621"><sup>***</sup>Please LogIn or Register to Make Changes!<sup>***</sup></h4>
+				{% endif %}	
+			
+				
+		</div>
+		
+
+	</div>
+
+	<!-- About -->
+
+	<div class="testimonials" id="testimonials">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/bg.jpg' %}" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">Why walk when you can Dance</div>
+					<div class="section_title"><h2>ABOUT</h2></div>
+				</div>
+			</div>
+			<div class="row testimonials_row">
+				<div class="col">
+
+					<!-- About Slider -->
+					<div class="testimonials_slider_container">
+						<div class="owl-carousel owl-theme testimonials_slider">
+							
+							<!-- Slide -->
+							<div class="owl-item text-center">
+								<div class="testimonial">“Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything”<br>Join with Wings of Melody and let's fly together!</div>
+								<div class="testimonial_author">
+									<div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
+										<div>Music is Life</div><br><br>
+										
+									</div>
+								</div>
+							</div>
+
+							<!-- Slide -->
+							<div class="owl-item text-center">
+								<div class="testimonial">“Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything”<br>Join with Wings of Melody and let's fly together!</div>
+								<div class="testimonial_author">
+									<div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
+										<div>Music is Life</div><br><br>
+									</div>
+								</div>
+							</div>
+
+							<!-- Slide -->
+							<div class="owl-item text-center">
+								<div class="testimonial">“Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything”<br>Join with Wings of Melody and let's fly together!</div>
+								<div class="testimonial_author">
+									<div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
+										<div>Music is Life</div><br><br>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	<!-- News -->
+
+	<div class="news" id="news">
+		<center>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8">
+					<div class="news_container">
+						<h1>TOPCHARTS</h1><br><br><br>
+						<!-- News Post -->
+						<div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+							<div class="news_post_image"><img src="{% static 'images/j2.jpg' %}" alt=""></div>
+							<div class="news_post_content">
+								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+									<div>01</div>
+									<div>melody</div>
+								</div>
+								<div class="news_post_title"><a href="#">INTENSIONS</a></div>
+								<div class="news_post_category">
+									<ul>
+										<li><a href="#">Justin Biber ft. Quavo</a></li>
+									</ul>
+								</div>
+								<div class="news_post_text">
+									<p>"Make sure that you don't need no mentions ...<br>Yeah! these are my only INTENSIONS"</p>
+								</div>
+							</div>
+						</div>
+						
+						<!-- News Post -->
+
+						<div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+							<div class="news_post_image"><img src="{% static 'images/mm1.jpg' %}" alt=""></div>
+							<div class="news_post_content">
+								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+									<div>02</div>
+									<div>melody</div>
+								</div>
+								<div class="news_post_title"><a href="#">MEMORIES</a></div>
+								<div class="news_post_category">
+									<ul>
+										<li><a href="#">Maroon 5</a></li>
+									</ul>
+								</div>
+								<div class="news_post_text">
+									<p>"MEMORIES bring back ... <br>MEMORIES bring back YOU!"</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- News Post -->
+						<div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+							<div class="news_post_image"><img src="{% static 'images/l1.jpg' %}" alt=""></div>
+							<div class="news_post_content">
+								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+									<div>03</div>
+									<div>melody</div>
+								</div>
+								<div class="news_post_title"><a href="#">Best tips to travel light</a></div>
+								<div class="news_post_category">
+									<ul>
+										<li><a href="#">lavu</a></li>
+									</ul>
+								</div>
+								<div class="news_post_text">
+									<p>"I LIKE ME BETTER ...<br> when im with you!"</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+		</center>
+	</div>
+
+	<!-- Footer -->
+
+	<footer class="footer"><div class="parallax_background parallax-window" data-parallax="scroll"
+		data-image-src="{% static 'images/bg.jpg' %}" data-speed="0.8"></div>
+		<br>
+		<br>
+		<br>
+		<center><H1 style="color:black">END!!!</H1></center>
+	</div>
+		
+	</footer>
+</div>
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+
+
+</body>
+</html>
